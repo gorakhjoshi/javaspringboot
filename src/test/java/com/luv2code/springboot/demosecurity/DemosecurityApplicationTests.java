@@ -1,10 +1,10 @@
-package com.luv2code.springdemo.mvc;
+package com.luv2code.springboot.demosecurity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ValidationdemoApplicationTests {
+class DemosecurityApplicationTests {
 
 	@Test
 	void contextLoads() {
