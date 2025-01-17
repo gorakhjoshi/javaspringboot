@@ -1,5 +1,6 @@
 package com.luv2code.springboot.demosecurity.security;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -40,6 +41,9 @@ public class DemoSecurityConfig {
 
         http.authorizeHttpRequests(configurer ->
                         configurer
+                                .requestMatchers("/").hasRole("EMPLOYEE")
+                                .requestMatchers("/leaders/**").hasRole("MANAGER")
+                                .requestMatchers("/systems/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form ->
@@ -53,16 +57,5 @@ public class DemoSecurityConfig {
 
         return http.build();
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
